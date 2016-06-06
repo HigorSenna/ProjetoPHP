@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-    <link rel="stylesheet" href="/ProjetoPHP/estilos/bootstrap.min.css">
+    
+    <link rel="stylesheet" href="/ProjetoPHP/estilos/bootstrap-3.3.6-dist/css/bootstrap.min.css">
     <meta charset="UTF-8">
     <title>Cadastro de Usuários</title>
 </head>
@@ -30,6 +31,7 @@
                 <input type="submit" class="btn-success" value="Cadastrar"/>
             </form>
         </div>
+        <a href="loginADM.php">Administrador</a>
     </div>
 </body>
 </html>
