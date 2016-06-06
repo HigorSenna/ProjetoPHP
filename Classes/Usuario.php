@@ -9,11 +9,6 @@ class Usuario
     private $cpf;
     private $senha;
 
-    public function salvarUsuario(Usuario $usuario)
-    {
-
-    }
-
     public function Usuario(){
     }
 

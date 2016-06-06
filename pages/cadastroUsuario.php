@@ -10,22 +10,22 @@
         <div class="form-group">
             <form action="../Transacoes/transacoesUsuario/inserirUsuario.php" method="POST">
                 <label>Nome:</label>
-                <input type="text" name="nomeUsuario" class="form-control"/>
+                <input type="text" name="nomeUsuario" class="form-control" required="required"/>
 
                 <label>Email:</label>
-                <input type="text" name="emailUsuario" class="form-control"/>
+                <input type="text" name="emailUsuario" class="form-control" required="required"/>
 
                 <label>CPF:</label>
-                <input type="text" name="cpfUsuario" class="form-control"/>
+                <input type="text" name="cpfUsuario" class="form-control" required="required"/>
 
                 <label>Endereço:</label>
-                <input type="text" name="enderecoUsuario" class="form-control"/>
+                <input type="text" name="enderecoUsuario" class="form-control" required="required"/>
 
                 <label>Telefone:</label>
-                <input type="text" name="telefoneUsuario" class="form-control"/>
+                <input type="text" name="telefoneUsuario" class="form-control" required="required"/>
 
                 <label>Senha:</label>
-                <input type="text" name="senhaUsuario" class="form-control"/>
+                <input type="text" name="senhaUsuario" class="form-control" required="required"/>
 
                 <input type="submit" class="btn-success" value="Cadastrar"/>
             </form>
