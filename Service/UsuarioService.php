@@ -4,6 +4,9 @@ class UsuarioService
 {
     public function salvarUsuario(Usuario $usuario) {
         $usuarioDAO = new UsuarioDAO();
-        $usuarioDAO->salvar($usuario);
+        if($usuarioDAO->salvar($usuario)){
+            return true;
+        }
+        return false;
     }
 }
