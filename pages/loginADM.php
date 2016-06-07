@@ -2,7 +2,10 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/ProjetoPHP/estilos/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <script src="/estilos/bootstrap-3.3.6-dist/js/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="/estilos/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <script src="/estilos/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+
     <title>Login Administrador</title>
 </head>
 <body>
@@ -19,5 +22,7 @@
             </form>
         </div>
     </div>
+
+
 </body>
 </html>

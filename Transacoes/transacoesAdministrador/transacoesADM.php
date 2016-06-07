@@ -2,8 +2,8 @@
 include('../../Classes/Administrador.php');
 include('../../Controller/AdmController.php');
 
-$login = $_POST['login'];
-$senha = $_POST['senha'];
+$login = 'a';
+$senha = 'a';
 
 $admController = new AdmController();
 if($admController->existeUsuario($login,$senha)){
