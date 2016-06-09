@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `teatro` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `teatro`;
--- MySQL dump 10.13  Distrib 5.6.23, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
 --
 -- Host: localhost    Database: teatro
 -- ------------------------------------------------------
--- Server version	5.6.24-log
+-- Server version	5.6.19
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -44,6 +44,34 @@ INSERT INTO `administradores` VALUES (1,'a','a','senna');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `pecas`
+--
+
+DROP TABLE IF EXISTS `pecas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pecas` (
+  `ID_PECA` int(11) NOT NULL AUTO_INCREMENT,
+  `NM_PECA` varchar(45) DEFAULT NULL,
+  `DESC_PECA` varchar(45) DEFAULT NULL,
+  `DT_PECA` varchar(45) DEFAULT NULL,
+  `HR_PECA` varchar(45) DEFAULT NULL,
+  `CAMINHO_IMAGEM` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`ID_PECA`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `pecas`
+--
+
+LOCK TABLES `pecas` WRITE;
+/*!40000 ALTER TABLE `pecas` DISABLE KEYS */;
+INSERT INTO `pecas` VALUES (1,'sad','asd','sad','asd','as'),(2,'ada','asd','asd','asda','../../uploads/Penguins.jpg'),(3,'ada','asd','asd','asda','../../uploads/Lighthouse.jpg');
+/*!40000 ALTER TABLE `pecas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `usuarios`
 --
 
@@ -58,7 +86,7 @@ CREATE TABLE `usuarios` (
   `TELEFONE` varchar(45) DEFAULT NULL,
   `SENHA` varchar(45) NOT NULL,
   PRIMARY KEY (`ID_USUARIO`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +95,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'5','151','178','818','81'),(2,'56','181','818','18','81'),(3,'sdhbsd','sdffasd','23','qwdqw','qeq'),(4,'Testando','sduh','sduh','uhsu','h'),(5,'weuweruweruiwerui','51','51','18','181'),(6,'TESTE','sdsd','23','qw','dqw');
+INSERT INTO `usuarios` VALUES (1,'5','151','178','818','81'),(2,'56','181','818','18','81'),(3,'sdhbsd','sdffasd','23','qwdqw','qeq'),(4,'Testando','sduh','sduh','uhsu','h'),(5,'weuweruweruiwerui','51','51','18','181'),(6,'TESTE','sdsd','23','qw','dqw'),(7,'aS','AS','0','SAD','DSQ');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -80,4 +108,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-05 23:09:16
+-- Dump completed on 2016-06-08 20:32:03

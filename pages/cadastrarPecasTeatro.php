@@ -9,18 +9,32 @@
 </head>
 <body>
     <div class="container-fluid">
+        <h2>Cadastro de peças de teatro</h2>
         <div class="form-group">
-            <form action="" method="">
-                <label>Nome da pe�a</label>
-                <input type="text" class="form-control"/>
+            <form action="../Transacoes/transacoesPecasTeatro/cadastroPecaTeatro.php" method="POST" enctype="multipart/form-data">
+                <label>Nome da peça</label>
+                <input type="text" name="nome" class="form-control" required="required"/>
 
                 <label>Horario</label>
-                <input type="text" class="form-control"/>
+                <input type="text" name="hora" class="form-control" required="required"/>
 
                 <label>Lugares disponibilizados</label>
                 <input type="text" disabled="disabled" name="lugares" value="100" class="form-control"/>
+
+                <label>Descrição</label>
+                <input type="text" name="descricao" name="descricao"  class="form-control" required="required"/>
+
+                <label>Dia</label>
+                <input type="text"  name="data" placeholder="dd/MM" class="form-control" required="required"/>
+
+                <label>Imagem</label>
+                <input type="file" name="caminhoImagem" required="required"/>
+
+                <input type="submit" value="cadastrar" />
             </form>
         </div>
+        
+        <!--<img src="../uploads/Desert.jpg">-->
     </div>
 </body>
 </html>
