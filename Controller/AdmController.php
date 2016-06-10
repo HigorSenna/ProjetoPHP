@@ -1,5 +1,7 @@
 <?php
-include('../../Service/AdministradorService.php');
+namespace ProjetoPHP\Controller;
+use ProjetoPHP\Service\AdministradorService;
+
 class AdmController
 {
     public function existeUsuario($login,$senha){

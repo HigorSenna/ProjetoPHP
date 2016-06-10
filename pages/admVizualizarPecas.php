@@ -1,8 +1,10 @@
-<script src="/ProjetoPHP/estilos/bootstrap-3.3.6-dist/js/jquery-1.12.4.js"></script>
+<script src="/estilos/bootstrap-3.3.6-dist/js/jquery-1.12.4.js"></script>
 <link rel="stylesheet" href="/estilos/bootstrap-3.3.6-dist/css/bootstrap.min.css">
-<script src="/ProjetoPHP/estilos/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+<script src="/estilos/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
 <?php
-include('../Controller/ConsultaPecaTeatroController.php');
+include('..\Controller\ConsultaPecaTeatroController.php');
+use ProjetoPHP\Controller\ConsultaPecaTeatroController as ConsultaPecaTeatroController;
+
 $consultaPeca = new ConsultaPecaTeatroController();
 $registros = $consultaPeca->bucarTodasPecasCadastradas();
 
@@ -36,10 +38,14 @@ echo"<table class='table table-bordered' style='width:50%;margin:5% auto;'>
             <td>$data</td>
             <td>$hora</td>
             <td>$imagem</td>
-            <td>ALTERAR/EXCLUIR</td>
+            <td>
+                <a href=''>Alterar</a>
+               <a href='modalExcluir.php?id=$id' class='btn btn-primary' data-toggle='modal' data-target='.bd-example-modal-sm'>Excluir</a>
+            </td>
         </tr>
         ";
     }
-
   echo"
 </table>";
+
+include('modalExcluir.php');

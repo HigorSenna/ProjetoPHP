@@ -1,4 +1,5 @@
 <?php
+namespace ProjetoPHP\ConexaoBanco;
 class ConexaoBanco
 {
 /*$user = "root";
@@ -12,7 +13,7 @@ $db = new PDO("mysql:host=$server;dbname=$database",$user,$pass);*/
         $pass="aluno";
         $database="teatro";
         $server="127.0.0.1";
-        $db = new PDO("mysql:host=$server;dbname=$database",$user,$pass);
+        $db = new \PDO("mysql:host=$server;dbname=$database",$user,$pass);
         return $db;
     }
 }

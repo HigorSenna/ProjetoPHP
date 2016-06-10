@@ -1,5 +1,9 @@
 <?php
-include('../../DataAcessObject(DAO)/UsuarioDAO.php');
+
+namespace ProjetoPHP\Service;
+use ProjetoPHP\DataAcessObject\UsuarioDAO;
+use ProjetoPHP\Classes\Usuario;
+
 class UsuarioService
 {
     public function salvarUsuario(Usuario $usuario) {

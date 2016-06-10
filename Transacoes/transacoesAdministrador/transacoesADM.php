@@ -1,6 +1,6 @@
 <?php
-include('../../Classes/Administrador.php');
-include('../../Controller/AdmController.php');
+//include('../../Classes/Administrador.php');
+use ProjetoPHP\Controller\AdmController;
 
 $login = $_POST['login'];
 $senha = $_POST['senha'];

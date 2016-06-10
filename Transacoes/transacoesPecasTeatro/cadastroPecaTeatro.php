@@ -1,6 +1,6 @@
 <?php
-include('../../Classes/PecaTeatro.php');
-include('../../Controller/CadastroPecaTeatroController.php');
+use ProjetoPHP\Classes\PecaTeatro;
+use ProjetoPHP\Controller\CadastroPecaTeatroController;
 
 $peca = new PecaTeatro(
     $_POST['nome'],

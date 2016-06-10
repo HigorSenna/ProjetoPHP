@@ -1,3 +1,8 @@
+<?php
+spl_autoload_extensions(".php");
+spl_autoload_register();
+
+?>
 <!doctype html>
 <html lang="pt-br">
 <head>

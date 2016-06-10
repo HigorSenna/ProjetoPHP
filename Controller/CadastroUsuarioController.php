@@ -1,5 +1,9 @@
 <?php
-include('../../Service/UsuarioService.php');
+//include('../../Service/UsuarioService.php');
+namespace ProjetoPHP\Controller;
+use ProjetoPHP\Service\UsuarioService;
+use ProjetoPHP\Classes\Usuario;
+
 class CadastroUsuarioController
 {
 

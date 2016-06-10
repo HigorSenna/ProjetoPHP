@@ -1,7 +1,8 @@
 <?php
-include ('../../Utils/usuarioUtils/UsuarioUtils.php');
-include('../../Classes/Usuario.php');
-include('../../Controller/CadastroUsuarioController.php');
+//include ('../../Utils/usuarioUtils/UsuarioUtils.php');
+use ProjetoPHP\Classes\Usuario;
+use ProjetoPHP\Controller\CadastroUsuarioController;
+
 if(1==1){
     $usuario = new Usuario();
     $usuario->setNome($_POST['nomeUsuario']);

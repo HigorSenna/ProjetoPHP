@@ -1,5 +1,7 @@
 <?php
-include('../../DataAcessObject(DAO)/AdministradorDAO.php');
+namespace ProjetoPHP\Service;
+use ProjetoPHP\DataAcessObject\AdministradorDAO;
+
 class AdministradorService
 {
     public function buscarUsuario($login,$senha){

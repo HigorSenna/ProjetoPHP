@@ -1,5 +1,5 @@
 <?php
-
+namespace ProjetoPHP\Classes;
 class Usuario
 {
     private $nome;

@@ -1,7 +1,24 @@
 <?php
-include('../DataAcessObject(DAO)/PecaTeatroDAO.php');
+
+namespace ProjetoPHP\Service;
+include('..\DataAcessObject\PecaTeatroDAO.php');
+include('..\Classes\PecaTeatro.php');
+use ProjetoPHP\DataAcessObject\PecaTeatroDAO as PecaTeatroDAO;
+use ProjetoPHP\Classes\PecaTeatro as PecaTeatro;
+
 class PecaTeatroService
 {
+
+    public function excluirPeca($id){
+        //bucar peca por id, pegar o caminho da imagem
+        $pecaTeatroDAO = new PecaTeatroDAO();
+        if($pecaTeatroDAO->excluir($id)){
+            //remover a imagem.
+            return true;
+        }
+        return false;
+    }
+
     public function salvar(PecaTeatro $peca){
         $pecaTeatroDAO = new PecaTeatroDAO();
 
