@@ -1,21 +1,16 @@
-<?php
-spl_autoload_extensions(".php");
-spl_autoload_register();
-
-?>
 <!doctype html>
 <html lang="pt-br">
 <head>
-    <script src="/estilos/bootstrap-3.3.6-dist/js/jquery-1.12.4.js"></script>
-    <link rel="stylesheet" href="/estilos/bootstrap-3.3.6-dist/css/bootstrap.min.css">
-    <script src="/estilos/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+    <script src="/ProjetoPHP/estilos/bootstrap-3.3.6-dist/js/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="/ProjetoPHP/estilos/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <script src="/ProjetoPHP/estilos/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
     <meta charset="UTF-8">
     <title>Cadastro de Usuários</title>
 </head>
 <body>
     <div class="container-fluid">
         <div class="form-group">
-            <form action="../Transacoes/transacoesUsuario/inserirUsuario.php" method="POST">
+            <form action="/ProjetoPHP/Transacoes/inserirUsuario.php" method="POST">
                 <label>Nome:</label>
                 <input type="text" name="nomeUsuario" class="form-control" required="required"/>
 
@@ -44,7 +39,7 @@ spl_autoload_register();
             <div class="row">
                 <div class="col-md-3 col-md-offset-4">
                     <div class="panel well">
-                        <img class="img-responsive" src="/estilos/img/logo.jpg" alt="Logo Cinema" style="margin:0 auto;"/>
+                        <img class="img-responsive" src="/ProjetoPHP/estilos/img/logo.jpg" alt="Logo Cinema" style="margin:0 auto;"/>
                     </div>
                 </div>
             </div>
@@ -59,7 +54,7 @@ spl_autoload_register();
                         <p class="alert alert-info">
                             <i class="fa fa-question-circle fa-fw"></i> Preencha os campos para logar no sistema.
                         </p>
-                        <form action="../Transacoes/transacoesAdministrador/transacoesADM.php" method="POST">
+                        <form action="/ProjetoPHP/Transacoes/transacoesADM.php" method="POST">
                             <div class="form-group">
 
                                 <span class="glyphicon glyphicon-user"></span>

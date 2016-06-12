@@ -1,7 +1,9 @@
 <?php
 namespace ProjetoPHP\DataAcessObject;
+include_once ('../Classes/Usuario.php');
+include_once ('../ConexaoBanco/ConexaoBanco.php');
 use ProjetoPHP\ConexaoBanco\ConexaoBanco;
-
+use ProjetoPHP\Classes\Usuario;
 class UsuarioDAO
 {
     public function salvar(Usuario $usuario){

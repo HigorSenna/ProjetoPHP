@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <script src="/ProjetoPHP/estilos/bootstrap-3.3.6-dist/js/jquery-1.12.4.js"></script>
-    <link rel="stylesheet" href="/estilos/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/ProjetoPHP/estilos/bootstrap-3.3.6-dist/css/bootstrap.min.css">
     <script src="/ProjetoPHP/estilos/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
     <title>Cadastro de pe�as</title>
 </head>
@@ -11,7 +11,7 @@
     <div class="container-fluid">
         <h2>Cadastro de peças de teatro</h2>
         <div class="form-group">
-            <form action="../Transacoes/transacoesPecasTeatro/cadastroPecaTeatro.php" method="POST" enctype="multipart/form-data">
+            <form action="/ProjetoPHP/Transacoes/cadastroPecaTeatro.php" method="POST" enctype="multipart/form-data">
                 <label>Nome da peça</label>
                 <input type="text" name="nome" class="form-control" required="required"/>
 

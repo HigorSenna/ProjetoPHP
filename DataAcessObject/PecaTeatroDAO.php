@@ -1,7 +1,9 @@
 <?php
 namespace ProjetoPHP\DataAcessObject;
-include('..\ConexaoBanco\ConexaoBanco.php');
+include_once ('../ConexaoBanco/ConexaoBanco.php');
+include_once ('../Classes/PecaTeatro.php');
 use ProjetoPHP\ConexaoBanco\ConexaoBanco;
+use ProjetoPHP\Classes\PecaTeatro;
 
 class PecaTeatroDAO
 {
@@ -18,13 +20,13 @@ class PecaTeatroDAO
 
    public function salvar(PecaTeatro $peca){
        $db = ConexaoBanco::realizarConexao();
-
        $sql = "INSERT INTO pecas (NM_PECA,DESC_PECA,DT_PECA,HR_PECA,CAMINHO_IMAGEM) values(?,?,?,?,?)";
        $stmt = $db->prepare($sql);
+
        $valoresObjeto = array($peca->getNome(),$peca->getDescricao(),
            $peca->getData(),$peca->getHora(),$peca->getCaminhoImagem());
 
-       if($stmt->execute($valoresObjeto)){
+       if($stmt->execute($valoresObjeto)){         
            return true;
        }
        return false;

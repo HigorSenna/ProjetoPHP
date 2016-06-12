@@ -1,8 +1,8 @@
 <?php
 
 namespace ProjetoPHP\Service;
-include('..\DataAcessObject\PecaTeatroDAO.php');
-include('..\Classes\PecaTeatro.php');
+include_once('..\DataAcessObject\PecaTeatroDAO.php');
+include_once('..\Classes\PecaTeatro.php');
 use ProjetoPHP\DataAcessObject\PecaTeatroDAO as PecaTeatroDAO;
 use ProjetoPHP\Classes\PecaTeatro as PecaTeatro;
 
@@ -22,11 +22,10 @@ class PecaTeatroService
     public function salvar(PecaTeatro $peca){
         $pecaTeatroDAO = new PecaTeatroDAO();
 
-        if($pecaTeatroDAO->salvar($peca)){
-
+        if($pecaTeatroDAO->salvar($peca)){         
             move_uploaded_file($_FILES['caminhoImagem']['tmp_name'], $peca->getCaminhoImagem());
             return true;
-        }
+        }      
         return false;
     }
 

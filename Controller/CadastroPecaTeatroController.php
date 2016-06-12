@@ -1,6 +1,8 @@
 <?php
-//include('../../Service/PecaTeatroService.php')
+
 namespace ProjetoPHP\Controller;
+include_once('../Service/PecaTeatroService.php');
+include_once('../Classes/PecaTeatro.php');
 use ProjetoPHP\Classes\PecaTeatro;
 use ProjetoPHP\Service\PecaTeatroService;
 

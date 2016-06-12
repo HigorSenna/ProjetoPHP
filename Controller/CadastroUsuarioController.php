@@ -1,6 +1,8 @@
 <?php
 //include('../../Service/UsuarioService.php');
 namespace ProjetoPHP\Controller;
+include_once ('../Service/UsuarioService.php');
+include_once ('../Classes/Usuario.php');
 use ProjetoPHP\Service\UsuarioService;
 use ProjetoPHP\Classes\Usuario;
 

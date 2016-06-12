@@ -1,5 +1,6 @@
 <?php
 namespace ProjetoPHP\Classes;
+
 class PecaTeatro
 {
     private $nome;

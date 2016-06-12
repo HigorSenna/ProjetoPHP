@@ -1,8 +1,8 @@
-<script src="/estilos/bootstrap-3.3.6-dist/js/jquery-1.12.4.js"></script>
-<link rel="stylesheet" href="/estilos/bootstrap-3.3.6-dist/css/bootstrap.min.css">
-<script src="/estilos/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+<script src="/ProjetoPHP/estilos/bootstrap-3.3.6-dist/js/jquery-1.12.4.js"></script>
+<link rel="stylesheet" href="/ProjetoPHP/estilos/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+<script src="/ProjetoPHP/estilos/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
 <?php
-include('..\Controller\ConsultaPecaTeatroController.php');
+include_once('..\Controller\ConsultaPecaTeatroController.php');
 use ProjetoPHP\Controller\ConsultaPecaTeatroController as ConsultaPecaTeatroController;
 
 $consultaPeca = new ConsultaPecaTeatroController();
@@ -20,7 +20,7 @@ echo"<table class='table table-bordered' style='width:50%;margin:5% auto;'>
     <th>Hora </th>
     <th>Descricao </th>
     <th>Caminho da imagem</th>
-    <th>Ação </th>
+    <th>Aï¿½ï¿½o </th>
    ";
     while($resultado = $registros->fetch()){
             $id =   $resultado['ID_PECA'];

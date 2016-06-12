@@ -1,5 +1,7 @@
 <?php
 //include ('../../Utils/usuarioUtils/UsuarioUtils.php');
+include_once ('../Classes/Usuario.php');
+include_once ('../Controller/CadastroUsuarioController.php');
 use ProjetoPHP\Classes\Usuario;
 use ProjetoPHP\Controller\CadastroUsuarioController;
 

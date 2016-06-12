@@ -1,5 +1,6 @@
 <?php
 namespace ProjetoPHP\DataAcessObject;
+include_once('../ConexaoBanco/ConexaoBanco.php');
 use ProjetoPHP\ConexaoBanco\ConexaoBanco;
 
 class AdministradorDAO{
