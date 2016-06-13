@@ -33,7 +33,8 @@
                 <input type="submit" value="cadastrar" />
             </form>
         </div>
-        
+
+        <a href="admVizualizarPecas.php">Peças Cadastradas </a>
         <!--<img src="../uploads/Desert.jpg">-->
     </div>
 </body>

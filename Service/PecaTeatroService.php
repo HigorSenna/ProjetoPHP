@@ -1,10 +1,10 @@
 <?php
 
 namespace ProjetoPHP\Service;
-include_once('..\DataAcessObject\PecaTeatroDAO.php');
-include_once('..\Classes\PecaTeatro.php');
-use ProjetoPHP\DataAcessObject\PecaTeatroDAO as PecaTeatroDAO;
-use ProjetoPHP\Classes\PecaTeatro as PecaTeatro;
+include_once('../DataAcessObject/PecaTeatroDAO.php');
+include_once('../Classes/PecaTeatro.php');
+use ProjetoPHP\DataAcessObject\PecaTeatroDAO;
+use ProjetoPHP\Classes\PecaTeatro;
 
 class PecaTeatroService
 {

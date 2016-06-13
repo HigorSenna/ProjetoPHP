@@ -10,6 +10,7 @@ class PecaTeatroDAO
     public function excluir($id){
         $db = ConexaoBanco::realizarConexao();
         $sql  ="DELETE FROM pecas WHERE (ID_PECA) = (?)";
+      
         $valor = array($id);
         $stmt = $db->prepare($sql);
         if($stmt ->execute($valor)){

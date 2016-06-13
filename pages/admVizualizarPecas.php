@@ -40,7 +40,7 @@ echo"<table class='table table-bordered' style='width:50%;margin:5% auto;'>
             <td>$imagem</td>
             <td>
                 <a href=''>Alterar</a>
-               <a href='modalExcluir.php?id=$id' class='btn btn-primary' data-toggle='modal' data-target='.bd-example-modal-sm'>Excluir</a>
+               <a href='/ProjetoPHP/Transacoes/excluirPecaTeatro.php?id=$id'>Excluir</a>
             </td>
         </tr>
         ";
@@ -48,4 +48,4 @@ echo"<table class='table table-bordered' style='width:50%;margin:5% auto;'>
   echo"
 </table>";
 
-include('modalExcluir.php');
+?>
