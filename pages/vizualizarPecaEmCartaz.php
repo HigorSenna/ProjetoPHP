@@ -21,7 +21,26 @@ $pecaTeatro = $consultaPeca->buscarPecaPorId($id);
         <h2> Dia: <?=$pecaTeatro['DT_PECA']?> </h2>
         <h2> Ás   <?=$pecaTeatro['HR_PECA']?> </h2>
         <h2> Descrição: <?=$pecaTeatro['DESC_PECA']?> </h2>
+        <h2>Qtd Lugares: <?= $pecaTeatro['QTD'] ?> </h2>
         <img src="<?= $pecaTeatro['CAMINHO_IMAGEM']?>" style='width:300px;height: 400px;'> </img>
+
+        <div>
+            <?php
+                $lugares = $pecaTeatro['QTD'];
+                for($i = 1; $i< $lugares;$i++){
+                    if($i/11 == 1){
+
+                        echo "<br> Lugar $i: <input type='radio' name='lugares' /> ";
+                      
+                    }
+                    else{
+                        echo "Lugar $i: <input type='radio' name='lugares' /> ";
+                    }
+                }
+
+            ?>
+
+        </div>
     </div>
 
 </body>

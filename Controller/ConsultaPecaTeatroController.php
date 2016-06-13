@@ -22,4 +22,8 @@ class ConsultaPecaTeatroController
         return $pecaTeatroService->buscarPecaPorId($id);
     }
 
+    public function buscarAscentoPeca($id){
+        
+    }
+
 }

@@ -38,4 +38,5 @@ class PecaTeatroService
         $pecaTeatroDAO = new PecaTeatroDAO();
         return $pecaTeatroDAO->buscarPecaPorId($id);
     }
+        
 }

@@ -25,7 +25,7 @@ while($resultado = $registros->fetch()){
     $nome = $resultado['NM_PECA'];
     $descricao = $resultado['DESC_PECA'];
     $data = $resultado['DT_PECA'];
-    $hora = $resultado['HR_PECA'];
+    $hora = $resultado['HR_PECA'];   
 
     echo"
         <tr>          

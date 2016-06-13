@@ -82,10 +82,10 @@ class PecaTeatroDAO
     public function buscarPecaPorId($id){
         $db = ConexaoBanco::realizarConexao();
 
-        $sql = "SELECT * FROM pecas WHERE ID_PECA = $id";
+        $sql = "SELECT * FROM pecas as peca left join lugares_peca as lugares on 
+          peca.ID_PECA = $id";
                
         $resultado = $db->query($sql);
-        
         return $resultado->fetch();
-    }
+    }   
 }
