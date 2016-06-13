@@ -21,7 +21,7 @@ $pecaTeatro = $consultaPeca->buscarPecaPorId($id);
         <h2> <?=$pecaTeatro['DT_PECA']?> </h2>
         <h2> <?=$pecaTeatro['HR_PECA']?> </h2>
         <h2> <?=$pecaTeatro['DESC_PECA']?> </h2>
-        <img src="<?= $pecaTeatro['CAMINHO_IMAGEM']?>"> </img>
+        <img src="<?= $pecaTeatro['CAMINHO_IMAGEM']?>" style='width:300px;height: 400px;'> </img>
     </div>
 
 </body>

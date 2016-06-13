@@ -30,9 +30,9 @@ while($resultado = $registros->fetch()){
     echo"
         <tr>          
             <td>$nome</td>
-            <td>$descricao</td>
             <td>$data</td>
-            <td>$hora</td>           
+            <td>$hora</td> 
+            <td>$descricao</td>                     
             <td>
                 <a href='vizualizarPecaEmCartaz.php?id=$id'>Vizualizar</a>               
             </td>
