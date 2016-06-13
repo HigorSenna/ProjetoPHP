@@ -57,7 +57,7 @@ CREATE TABLE `lugares_peca` (
   PRIMARY KEY (`ID_LUGAR`),
   KEY `fk_lugar_peca_idx` (`ID_PECA`),
   CONSTRAINT `fk_lugar_peca` FOREIGN KEY (`ID_PECA`) REFERENCES `pecas` (`ID_PECA`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +66,7 @@ CREATE TABLE `lugares_peca` (
 
 LOCK TABLES `lugares_peca` WRITE;
 /*!40000 ALTER TABLE `lugares_peca` DISABLE KEYS */;
-INSERT INTO `lugares_peca` VALUES (14,26,100),(15,27,100),(16,28,100);
+INSERT INTO `lugares_peca` VALUES (17,41,100),(18,42,100),(19,43,100);
 /*!40000 ALTER TABLE `lugares_peca` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +85,7 @@ CREATE TABLE `pecas` (
   `DESC_PECA` varchar(45) NOT NULL,
   `CAMINHO_IMAGEM` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ID_PECA`)
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,8 +94,37 @@ CREATE TABLE `pecas` (
 
 LOCK TABLES `pecas` WRITE;
 /*!40000 ALTER TABLE `pecas` DISABLE KEYS */;
-INSERT INTO `pecas` VALUES (26,'As Filhas da Mãe','22/05/2016','13:00','Comédia','../uploads/filhas-da-mae.jpg'),(27,'Corpo Santo','25/05','22:00','Peça de Teatro','../uploads/corpo_santo.jpg'),(28,'Santo Imigrante','14/07','14:00','Peça de Teatro','../uploads/santo_imigrante.jpg');
+INSERT INTO `pecas` VALUES (41,'As Filhas da Mãe','22/08','15:00','Peça de Teatro','../uploads/filhas-da-mae.jpg'),(42,'Saga Italiana','25/09','22:30','Peça de Teatro','../uploads/santo_imigrante.jpg'),(43,'Corpo Santo','29/02','14:00','Peça de Teatro','../uploads/corpo_santo.jpg');
 /*!40000 ALTER TABLE `pecas` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `reservas`
+--
+
+DROP TABLE IF EXISTS `reservas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `reservas` (
+  `ID_RESERVA` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_PECA` int(11) DEFAULT NULL,
+  `ID_USUARIO` int(11) DEFAULT NULL,
+  `NUM_CADEIRA` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID_RESERVA`),
+  KEY `fk_reserva_peca_idx` (`ID_PECA`),
+  KEY `fk_reserva_usuario_idx` (`ID_USUARIO`),
+  CONSTRAINT `fk_reserva_peca` FOREIGN KEY (`ID_PECA`) REFERENCES `pecas` (`ID_PECA`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_reserva_usuario` FOREIGN KEY (`ID_USUARIO`) REFERENCES `usuarios` (`ID_USUARIO`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `reservas`
+--
+
+LOCK TABLES `reservas` WRITE;
+/*!40000 ALTER TABLE `reservas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `reservas` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -136,4 +165,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-12 23:44:40
+-- Dump completed on 2016-06-13 13:39:22
