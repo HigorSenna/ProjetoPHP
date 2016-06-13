@@ -23,6 +23,7 @@ $nome = $_SESSION['user']['NM_USUARIO'];
         <header style="border:1px solid red;">
             <h3 style='margin:auto;width:30%;'> Peças em Cartaz  </h3>
             <h2> Olá <?= $nome ?> </h2>
+            <a href="sessionClose.php">Deslogar</a>
         </header>
 
         <div>
