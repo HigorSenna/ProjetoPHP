@@ -33,7 +33,7 @@
             </form>
         </div>
 
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Administrador</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Login no sistema</button>
 
         <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
             <div class="row">
@@ -47,7 +47,7 @@
             <div class="col-md-3 col-md-offset-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h2 class="panel-title" id="texto"><strong>Login Administrador</strong></h2>
+                        <h2 class="panel-title" id="texto"><strong>Login Usuário</strong></h2>
                     </div>
 
                     <div class="panel-body">
@@ -75,16 +75,3 @@
     </div>
 </body>
 </html>
-
-<!--<form action="../Transacoes/transacoesAdministrador/transacoesADM.php" method="POST" style="width:350px;margin-left:20%;">
-    <h2 style="width:250px;">Faça seu login</h2>
-
-    <label>Login:</label>
-    <input type="text" class="form-control" style="width:190px;" />
-
-    <label>Senha:</label>
-    <input type="text" class="form-control" style="width:190px;"/>
-
-    <button type="button" class="btn btn-default" data-dismiss="modal" style="margin-top:5%;margin-left:5%;">Cancel</button>
-    <input type="submit"  class="btn btn-primary" style="margin-top:5%;margin-left:9%;">
-</form>*/-->

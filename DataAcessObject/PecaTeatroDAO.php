@@ -42,4 +42,14 @@ class PecaTeatroDAO
 
         return $resultados;
     }
+    
+    public function buscarPecaPorId($id){
+        $db = ConexaoBanco::realizarConexao();
+
+        $sql = "SELECT * FROM pecas WHERE ID_PECA = $id";
+               
+        $resultado = $db->query($sql);
+        
+        return $resultado->fetch();
+    }
 }

@@ -16,5 +16,10 @@ class ConsultaPecaTeatroController
          $pecaTeatroService = new PecaTeatroService();
          return $pecaTeatroService->buscarTodasPecas();
     }
+    
+    public function buscarPecaPorId($id){
+        $pecaTeatroService = new PecaTeatroService();
+        return $pecaTeatroService->buscarPecaPorId($id);
+    }
 
 }
