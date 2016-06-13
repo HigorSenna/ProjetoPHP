@@ -7,16 +7,43 @@ use ProjetoPHP\Classes\PecaTeatro;
 
 class PecaTeatroDAO
 {
+    //excluir peça positivo
+    // -> excluir reservas onde ID_PECA = ID_PECA,
+    //-> excluir lugares_peca onde ID_PECA=ID_PECA e
+    //-> excluir peca
     public function excluir($id){
-        $db = ConexaoBanco::realizarConexao();
-        $sql  ="DELETE FROM pecas WHERE (ID_PECA) = (?)";
+       // $db = ConexaoBanco::realizarConexao();
+        /*$sql  ="DELETE FROM pecas WHERE (ID_PECA) = (?)";
       
         $valor = array($id);
         $stmt = $db->prepare($sql);
         if($stmt ->execute($valor)){
             return true;
         }
+        return false;*/
+        
+        if($this->excluirReservasReferenteAPeca($id)->rowCount()> 0
+            && $this->excluirLugaresDisponiveisPeca($id)->rowCount()> 0 
+            && $this->excluirPecaBanco($id)->rowCount() > 0){
+            return true;
+        }
         return false;
+    }
+
+    private function excluirReservasReferenteAPeca($id){
+        $db = ConexaoBanco::realizarConexao();
+        $sql = "DELETE FROM reservas WHERE ID_PECA = $id";       
+        return $db->query($sql);
+    }
+    private function excluirLugaresDisponiveisPeca($id){
+        $db = ConexaoBanco::realizarConexao();
+        $sql = "DELETE FROM lugares_peca WHERE ID_PECA = $id ";
+        return $db->query($sql);
+    }
+    private function excluirPecaBanco($id){
+        $db = ConexaoBanco::realizarConexao();
+        $sql = "DELETE FROM pecas WHERE ID_PECA = $id";
+        return $db->query($sql);
     }
 
 

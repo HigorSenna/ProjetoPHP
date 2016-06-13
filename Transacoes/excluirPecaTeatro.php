@@ -15,21 +15,21 @@ if($reserva->rowCount()>0){
     while($resultado = $reserva->fetch()){
         $nome = $resultado['EMAIL'];
         echo $nome;
-    }
-    
+    }  
+
+    echo"
+        <h1>Deseja Realmente excluir a peça?</h1>
+        <a href='excluirPecaBanco.php?id=$id'>SIM</a>
+        <a href='../pages/admVizualizarPecas.php'>NÃO</a>
+    ";
 }
 else{
-    echo "nao tem reserva";
+    echo "Essa peça ainda nao possui reservas.
+    <h1>Deseja realmente excluir a peça?</h1>
+    
+    <a href='excluirPecaBanco.php?id=$id'>SIM</a>
+    <a href='../pages/admVizualizarPecas.php'>NÃO</a>";
 }
-/*if($consultaPecaTeatroController->excluir($id)){
-    echo"
-        <script>
-            alert('Peca excluida com sucesso!');
-            window.location='../pages/admVizualizarPecas.php';
-        </script>
-    ";
-}*/
-
 
 ?>
 
