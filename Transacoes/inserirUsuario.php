@@ -12,7 +12,8 @@ if(1==1){
     $usuario->setEmail($_POST['emailUsuario']);
     $usuario->setEndereco($_POST['enderecoUsuario']);
     $usuario->setTelefone($_POST['telefoneUsuario']);
-    $usuario->setSenha($_POST['senhaUsuario']);   
+    $usuario->setSenha($_POST['senhaUsuario']);
+    $usuario->setTipoUsuario("comum");
 
     $cadastroUsuarioController = new CadastroUsuarioController();
     $cadastroUsuarioController->salvar($usuario);
