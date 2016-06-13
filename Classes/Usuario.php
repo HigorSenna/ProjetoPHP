@@ -8,6 +8,7 @@ class Usuario
     private $endereco;
     private $cpf;
     private $senha;
+    private $tipoUsuario ="comum";
 
     public function Usuario(){
     }
@@ -52,5 +53,12 @@ class Usuario
     }
     public function getSenha(){
         return $this->senha;
+    }
+
+    public function setTipoUsuario($tipo){
+        $this->tipoUsuario = $tipo;
+    }
+    public function getTipoUsuario(){
+        return $this->tipoUsuario;
     }
 }
