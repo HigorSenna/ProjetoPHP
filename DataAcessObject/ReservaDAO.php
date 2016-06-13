@@ -10,7 +10,7 @@ class ReservaDAO
 {
     public function buscarTodasReservasDaPeca($id){
         $db = ConexaoBanco::realizarConexao();
-        $sql = "SELECT * FROM reservas WHERE ID_PECA = $id";
+        $sql = "SELECT NUM_CADEIRA FROM reservas WHERE ID_PECA = $id";
         return $db->query($sql);        
     }
     

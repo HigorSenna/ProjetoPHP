@@ -13,7 +13,13 @@ $pecaTeatro = $consultaPeca->buscarPecaPorId($id);
 
 $reservaController = new ReservaController();
 $reserva = $reservaController->buscarTodasReservas($id);
-$todasReservas = $reserva->fetch();
+$todasReservas = Array();
+$j = 0;
+$reserva ->setFetchMode(PDO::FETCH_ASSOC);
+while($resultado = $reserva->fetch()){
+    $todasReservas[$j]=$resultado['NUM_CADEIRA'];
+    $j++;
+}
 
 ?>
 
@@ -41,11 +47,19 @@ $todasReservas = $reserva->fetch();
 
                 <?php
                     $lugares = $pecaTeatro['QTD'];
+                   global  $estaReservada;
                     for($i = 1; $i <= $lugares;$i++){
-                        if($todasReservas['NUM_CADEIRA'] == $i){
+                        for($j = 0; $j<count($todasReservas);$j++){
+                            if($todasReservas[$j] == $i){
+                                $estaReservada = true;
+                            }
+                        }
+                        if($estaReservada == true){
+                            $estaReservada= false;
                             echo " <input type='radio' name='lugar' value='$i' disabled='disabled'/> <span style='color:red;'> X </span>";
                         }
                         else{
+
                             echo "<input type='radio' name='lugar' value='$i' /> P $i";
                         }
                     }
