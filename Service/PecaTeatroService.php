@@ -10,17 +10,25 @@ class PecaTeatroService
 {
     public function excluirPecaSemReserva($id){
         $pecaTeatroDAO = new PecaTeatroDAO();
+        $peca = new PecaTeatro();
+        $peca = $pecaTeatroDAO->buscarPecaPorId($id);
+
         if($pecaTeatroDAO->excluirPecaSemReserva($id)){
+            $caminho = $peca['CAMINHO_IMAGEM'];
+            unlink($caminho);
             return true;
         }
         return false;
     }
 
-    public function excluirPeca($id){
-        //bucar peca por id, pegar o caminho da imagem
+    public function excluirPecaComReserva($id){
         $pecaTeatroDAO = new PecaTeatroDAO();
+        $peca = new PecaTeatro();
+        $peca = $pecaTeatroDAO->buscarPecaPorId($id);
+        
         if($pecaTeatroDAO->excluir($id)){
-            //remover a imagem.
+            $caminho = $peca['CAMINHO_IMAGEM'];
+            unlink($caminho);
             return true;
         }
         return false;
