@@ -57,7 +57,7 @@ CREATE TABLE `lugares_peca` (
   PRIMARY KEY (`ID_LUGAR`),
   KEY `fk_lugar_peca_idx` (`ID_PECA`),
   CONSTRAINT `fk_lugar_peca` FOREIGN KEY (`ID_PECA`) REFERENCES `pecas` (`ID_PECA`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +66,7 @@ CREATE TABLE `lugares_peca` (
 
 LOCK TABLES `lugares_peca` WRITE;
 /*!40000 ALTER TABLE `lugares_peca` DISABLE KEYS */;
-INSERT INTO `lugares_peca` VALUES (17,41,100),(18,42,100),(19,43,100);
+INSERT INTO `lugares_peca` VALUES (25,49,100),(26,50,100),(27,51,100);
 /*!40000 ALTER TABLE `lugares_peca` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +85,7 @@ CREATE TABLE `pecas` (
   `DESC_PECA` varchar(45) NOT NULL,
   `CAMINHO_IMAGEM` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ID_PECA`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,7 +94,7 @@ CREATE TABLE `pecas` (
 
 LOCK TABLES `pecas` WRITE;
 /*!40000 ALTER TABLE `pecas` DISABLE KEYS */;
-INSERT INTO `pecas` VALUES (41,'As Filhas da Mãe','22/08','15:00','Peça de Teatro','../uploads/filhas-da-mae.jpg'),(42,'Saga Italiana','25/09','22:30','Peça de Teatro','../uploads/santo_imigrante.jpg'),(43,'Corpo Santo','29/02','14:00','Peça de Teatro','../uploads/corpo_santo.jpg');
+INSERT INTO `pecas` VALUES (49,'As Filhas da Mãe','14/07','14:00','Peça de Teatro','../uploads/filhas-da-mae.jpg'),(50,'Corpo Santo','14/07','17:00','Peça de Teatro','../uploads/corpo_santo.jpg'),(51,'Saga Italiana','14/07','22:00','Peça de Teatro','../uploads/santo_imigrante.jpg');
 /*!40000 ALTER TABLE `pecas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,7 +115,7 @@ CREATE TABLE `reservas` (
   KEY `fk_reserva_usuario_idx` (`ID_USUARIO`),
   CONSTRAINT `fk_reserva_peca` FOREIGN KEY (`ID_PECA`) REFERENCES `pecas` (`ID_PECA`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_reserva_usuario` FOREIGN KEY (`ID_USUARIO`) REFERENCES `usuarios` (`ID_USUARIO`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -143,7 +143,7 @@ CREATE TABLE `usuarios` (
   `SENHA` varchar(45) NOT NULL,
   `TIPO_USUARIO` enum('adm','comum') DEFAULT NULL,
   PRIMARY KEY (`ID_USUARIO`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,7 +152,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'5','151','178','818','81',NULL),(2,'56','181','818','18','81','comum'),(3,'sdhbsd','sdffasd','23','qwdqw','qeq',NULL),(4,'Testando','sduh','sduh','uhsu','h',NULL),(5,'weuweruweruiwerui','51','51','18','181',NULL),(6,'TESTE','sdsd','23','qw','dqw',NULL),(7,'ahahah','sdsd','5128','sdsd','ssdsd',NULL),(8,'saasd','asd','55','sdsd','jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj',NULL),(9,'asdyhasdd','dasdasd77','415','23234909','232342',NULL),(10,'SENNA','sas','5','3','5','adm');
+INSERT INTO `usuarios` VALUES (1,'5','151','178','818','81',NULL),(2,'56','181','818','18','81','comum'),(3,'sdhbsd','sdffasd','23','qwdqw','qeq',NULL),(4,'Testando','sduh','sduh','uhsu','h',NULL),(5,'weuweruweruiwerui','51','51','18','181',NULL),(6,'TESTE','sdsd','23','qw','dqw',NULL),(7,'ahahah','sdsd','5128','sdsd','ssdsd',NULL),(8,'saasd','asd','55','sdsd','jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj',NULL),(9,'asdyhasdd','dasdasd77','415','23234909','232342',NULL),(10,'SENNA','sas','5','3','5','adm'),(11,'Higor Senna Chaves','ahahah@gmail.com','a','(55) 8978-9863','a','comum'),(12,'b','b','b','b','b',NULL),(13,'c','c','c','c','c',NULL),(14,'d','d','d','d','d','comum');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -165,4 +165,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-13 13:39:22
+-- Dump completed on 2016-06-13 17:36:57
