@@ -9,12 +9,11 @@ $consultaPecaTeatroController = new ConsultaPecaTeatroController();
 $reservaController = new ReservaController();
 $reserva = $reservaController->buscarReservaDaPeca($_GET['id']);
 
-
 if($reserva->rowCount()>0){
     echo"<h2>Usuarios que reservaram lugar: </h2>";
     while($resultado = $reserva->fetch()){
         $nome = $resultado['EMAIL'];
-        echo $nome;
+        echo "<br/>".$nome;
     }  
 
     echo"
