@@ -27,6 +27,7 @@ $pecaTeatro = $consultaPeca->buscarPecaPorId($id);
 
         <div style="width:850px;margin:-285px auto;">
             <form action="../Transacoes/reserva.php" method="POST">
+                <input type="hidden" name="idPeca" value="<?=$id?>"/>
                 <?php
                     $lugares = $pecaTeatro['QTD'];
                     for($i = 1; $i < $lugares;$i++){
