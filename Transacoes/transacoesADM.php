@@ -1,4 +1,5 @@
 <?php
+session_start();
 //include('../../Classes/Administrador.php');
 
 include_once('../Controller/AdmController.php');
@@ -14,9 +15,11 @@ $usuario = $admController->buscarUsuario($login,$senha);
 
 
 if($usuario['TIPO_USUARIO'] == "adm"){
+    $_SESSION['user'] = $usuario;
     header("Location:/ProjetoPHP/pages/cadastrarPecasTeatro.php");
 }
 else if($usuario['TIPO_USUARIO'] == "comum"){
+    $_SESSION['user'] = $usuario;
     header("Location:/ProjetoPHP/pages/home.php");
 }
 else{

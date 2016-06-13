@@ -27,11 +27,9 @@ $pecaTeatro = $consultaPeca->buscarPecaPorId($id);
         <div>
             <?php
                 $lugares = $pecaTeatro['QTD'];
-                for($i = 1; $i< $lugares;$i++){
+                for($i = 1; $i < $lugares;$i++){
                     if($i/11 == 1){
-
                         echo "<br> Lugar $i: <input type='radio' name='lugares' /> ";
-                      
                     }
                     else{
                         echo "Lugar $i: <input type='radio' name='lugares' /> ";
