@@ -44,6 +44,33 @@ INSERT INTO `administradores` VALUES (1,'a','a','senna');
 UNLOCK TABLES;
 
 --
+-- Table structure for table `lugares_peca`
+--
+
+DROP TABLE IF EXISTS `lugares_peca`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `lugares_peca` (
+  `ID_LUGAR` int(11) NOT NULL AUTO_INCREMENT,
+  `ID_PECA` int(11) DEFAULT NULL,
+  `QTD` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID_LUGAR`),
+  KEY `fk_lugar_peca_idx` (`ID_PECA`),
+  CONSTRAINT `fk_lugar_peca` FOREIGN KEY (`ID_PECA`) REFERENCES `pecas` (`ID_PECA`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lugares_peca`
+--
+
+LOCK TABLES `lugares_peca` WRITE;
+/*!40000 ALTER TABLE `lugares_peca` DISABLE KEYS */;
+INSERT INTO `lugares_peca` VALUES (14,26,100),(15,27,100),(16,28,100);
+/*!40000 ALTER TABLE `lugares_peca` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `pecas`
 --
 
@@ -58,7 +85,7 @@ CREATE TABLE `pecas` (
   `DESC_PECA` varchar(45) NOT NULL,
   `CAMINHO_IMAGEM` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ID_PECA`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -109,4 +136,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-12 22:36:07
+-- Dump completed on 2016-06-12 23:44:40
