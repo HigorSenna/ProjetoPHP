@@ -14,4 +14,9 @@ class ReservaService
         }
         return false;
     }
+    
+    public function buscarReservaDaPeca($idPeca){
+        $reservaDAO = new ReservaDAO();
+        return $reservaDAO->buscarReservasReferenteAPeca($idPeca);
+    }
 }

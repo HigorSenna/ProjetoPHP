@@ -16,4 +16,9 @@ class ReservaController
         }
         return false;
     }
+
+    public function buscarReservaDaPeca($idPeca){
+        $reservaService = new ReservaService();
+        return $reservaService->buscarReservaDaPeca($idPeca);
+    }
 }

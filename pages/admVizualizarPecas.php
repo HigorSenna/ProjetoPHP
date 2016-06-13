@@ -38,8 +38,7 @@ echo"<table class='table table-bordered' style='width:50%;margin:5% auto;'>
             <td>$data</td>
             <td>$hora</td>
             <td>$imagem</td>
-            <td>
-                <a href=''>Alterar</a>
+            <td>                
                <a href='/ProjetoPHP/Transacoes/excluirPecaTeatro.php?id=$id'>Excluir</a>
             </td>
         </tr>

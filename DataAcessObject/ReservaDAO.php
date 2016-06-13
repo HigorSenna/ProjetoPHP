@@ -2,6 +2,7 @@
 namespace ProjetoPHP\DataAcessObject;
 include_once ('../ConexaoBanco/ConexaoBanco.php');
 include_once ('../Classes/Reserva.php');
+use ProjetoPHP\Classes\PecaTeatro;
 use ProjetoPHP\Classes\Reserva;
 use ProjetoPHP\ConexaoBanco\ConexaoBanco;
 
@@ -19,5 +20,13 @@ class ReservaDAO
             return true;
         }
         return false;
+    }
+    
+    public function buscarReservasReferenteAPeca($idPecaTeatro){
+        $db = ConexaoBanco::realizarConexao();
+        
+        $sql = "SELECT * FROM reservas as r join usuarios as u on r.ID_USUARIO = u.ID_USUARIO and r.ID_PECA = $idPecaTeatro";
+        
+       return $db->query($sql);        
     }
 }
