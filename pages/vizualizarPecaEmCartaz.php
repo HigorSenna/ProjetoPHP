@@ -17,6 +17,7 @@ $pecaTeatro = $consultaPeca->buscarPecaPorId($id);
 </head>
 <body>
     <div class="container-fluid">
+        <a href="sessionClose.php">Deslogar</a>
         <h2> <?=$pecaTeatro['NM_PECA']?> </h2>
         <h2> Dia: <?=$pecaTeatro['DT_PECA']?> </h2>
         <h2> Ás   <?=$pecaTeatro['HR_PECA']?> </h2>
@@ -39,6 +40,7 @@ $pecaTeatro = $consultaPeca->buscarPecaPorId($id);
                 ?>
                 <input type="submit" value="Escolher cadeira"/>
             </form>
+            <a href="home.php">Peças em cartaz</a>
         </div>
     </div>
 
