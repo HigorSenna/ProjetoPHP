@@ -16,6 +16,11 @@ class ReservaController
         }
         return false;
     }
+    
+    public function buscarReservaUsuario(Reserva $reserva){
+        $reservaService = new ReservaService();
+        return $reservaService->buscarReservaUsuario($reserva);
+    }
 
     public function buscarReservaDaPeca($idPeca){
         $reservaService = new ReservaService();

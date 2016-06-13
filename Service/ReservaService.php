@@ -15,6 +15,11 @@ class ReservaService
         return false;
     }
     
+    public function buscarReservaUsuario(Reserva $reserva){
+        $reservaDAO = new ReservaDAO();
+        return $reservaDAO->buscarReservaDoUsuario($reserva);
+    }
+    
     public function buscarReservaDaPeca($idPeca){
         $reservaDAO = new ReservaDAO();
         return $reservaDAO->buscarReservasReferenteAPeca($idPeca);

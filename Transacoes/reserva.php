@@ -14,12 +14,25 @@ $reserva->setIdPeca($_POST['idPeca']);
 
 $reservaController = new ReservaController();
 
-if($reservaController->inserirReserva($reserva)){
+$resultado = $reservaController->buscarReservaUsuario($reserva);
+if($resultado->rowCount()>0){
     echo"
+        <script>
+            alert('Você não pode fazer mais de uma reserva na mesma peça!!!');
+            window.location='../pages/home.php';
+        
+        </script>
+    ";
+}
+else{
+    if($reservaController->inserirReserva($reserva)){
+        echo"
         <script>
             alert('Reserva realizada com sucesso!');
             window.location='../pages/home.php';
         
         </script>
     ";
+    }
 }
+
