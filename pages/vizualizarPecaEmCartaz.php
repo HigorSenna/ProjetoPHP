@@ -38,11 +38,12 @@ $todasReservas = $reserva->fetch();
         <div style="width:490px;margin:-285px auto;">
             <form action="../Transacoes/reserva.php" method="POST">
                 <input type="hidden" name="idPeca" value="<?=$id?>"/>
+
                 <?php
                     $lugares = $pecaTeatro['QTD'];
-                    for($i = 1; $i < $lugares;$i++){
+                    for($i = 1; $i <= $lugares;$i++){
                         if($todasReservas['NUM_CADEIRA'] == $i){
-                            echo " <input type='radio' name='lugar' value='$i' disabled='disabled'/> <span style='color:red;'> X: </span>";
+                            echo " <input type='radio' name='lugar' value='$i' disabled='disabled'/> <span style='color:red;'> X </span>";
                         }
                         else{
                             echo "<input type='radio' name='lugar' value='$i' /> P $i";
@@ -50,6 +51,7 @@ $todasReservas = $reserva->fetch();
                     }
                 ?>
                 <input type="submit" value="Escolher cadeira"/>
+
             </form>
             <a href="home.php">Peças em cartaz</a>
         </div>
