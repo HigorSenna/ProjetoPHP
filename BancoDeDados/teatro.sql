@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `teatro` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `teatro`;
--- MySQL dump 10.13  Distrib 5.6.17, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.6.23, for Win64 (x86_64)
 --
 -- Host: localhost    Database: teatro
 -- ------------------------------------------------------
--- Server version	5.6.19
+-- Server version	5.6.24-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -52,13 +52,13 @@ DROP TABLE IF EXISTS `pecas`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pecas` (
   `ID_PECA` int(11) NOT NULL AUTO_INCREMENT,
-  `NM_PECA` varchar(45) DEFAULT NULL,
-  `DESC_PECA` varchar(45) DEFAULT NULL,
-  `DT_PECA` varchar(45) DEFAULT NULL,
-  `HR_PECA` varchar(45) DEFAULT NULL,
+  `NM_PECA` varchar(45) NOT NULL,
+  `DT_PECA` varchar(45) NOT NULL,
+  `HR_PECA` varchar(45) NOT NULL,
+  `DESC_PECA` varchar(45) NOT NULL,
   `CAMINHO_IMAGEM` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ID_PECA`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -67,7 +67,7 @@ CREATE TABLE `pecas` (
 
 LOCK TABLES `pecas` WRITE;
 /*!40000 ALTER TABLE `pecas` DISABLE KEYS */;
-INSERT INTO `pecas` VALUES (1,'sad','asd','sad','asd','as'),(2,'ada','asd','asd','asda','../../uploads/Penguins.jpg'),(3,'ada','asd','asd','asda','../../uploads/Lighthouse.jpg');
+INSERT INTO `pecas` VALUES (26,'As Filhas da Mãe','22/05/2016','13:00','Comédia','../uploads/filhas-da-mae.jpg'),(27,'Corpo Santo','25/05','22:00','Peça de Teatro','../uploads/corpo_santo.jpg'),(28,'Santo Imigrante','14/07','14:00','Peça de Teatro','../uploads/santo_imigrante.jpg');
 /*!40000 ALTER TABLE `pecas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,8 +85,9 @@ CREATE TABLE `usuarios` (
   `CPF` varchar(14) NOT NULL,
   `TELEFONE` varchar(45) DEFAULT NULL,
   `SENHA` varchar(45) NOT NULL,
+  `TIPO_USUARIO` enum('adm','comum') DEFAULT NULL,
   PRIMARY KEY (`ID_USUARIO`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,7 +96,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'5','151','178','818','81'),(2,'56','181','818','18','81'),(3,'sdhbsd','sdffasd','23','qwdqw','qeq'),(4,'Testando','sduh','sduh','uhsu','h'),(5,'weuweruweruiwerui','51','51','18','181'),(6,'TESTE','sdsd','23','qw','dqw'),(7,'aS','AS','0','SAD','DSQ');
+INSERT INTO `usuarios` VALUES (1,'5','151','178','818','81',NULL),(2,'56','181','818','18','81','comum'),(3,'sdhbsd','sdffasd','23','qwdqw','qeq',NULL),(4,'Testando','sduh','sduh','uhsu','h',NULL),(5,'weuweruweruiwerui','51','51','18','181',NULL),(6,'TESTE','sdsd','23','qw','dqw',NULL),(7,'ahahah','sdsd','5128','sdsd','ssdsd',NULL),(8,'saasd','asd','55','sdsd','jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj',NULL),(9,'asdyhasdd','dasdasd77','415','23234909','232342',NULL),(10,'SENNA','sas','5','3','5','adm');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -108,4 +109,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-08 20:32:03
+-- Dump completed on 2016-06-12 22:36:07
