@@ -18,9 +18,9 @@ $pecaTeatro = $consultaPeca->buscarPecaPorId($id);
 <body>
     <div class="container-fluid">
         <h2> <?=$pecaTeatro['NM_PECA']?> </h2>
-        <h2> <?=$pecaTeatro['DT_PECA']?> </h2>
-        <h2> <?=$pecaTeatro['HR_PECA']?> </h2>
-        <h2> <?=$pecaTeatro['DESC_PECA']?> </h2>
+        <h2> Dia: <?=$pecaTeatro['DT_PECA']?> </h2>
+        <h2> Ás   <?=$pecaTeatro['HR_PECA']?> </h2>
+        <h2> Descrição: <?=$pecaTeatro['DESC_PECA']?> </h2>
         <img src="<?= $pecaTeatro['CAMINHO_IMAGEM']?>" style='width:300px;height: 400px;'> </img>
     </div>
 
