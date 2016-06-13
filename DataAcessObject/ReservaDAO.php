@@ -8,6 +8,12 @@ use ProjetoPHP\ConexaoBanco\ConexaoBanco;
 
 class ReservaDAO
 {
+    public function buscarTodasReservasDaPeca($id){
+        $db = ConexaoBanco::realizarConexao();
+        $sql = "SELECT * FROM reservas WHERE ID_PECA = $id";
+        return $db->query($sql);        
+    }
+    
     public function buscarReservaDoUsuario(Reserva $reserva){
         $db = ConexaoBanco::realizarConexao();
         

@@ -9,6 +9,11 @@ use ProjetoPHP\Service\ReservaService;
 
 class ReservaController
 {
+    public function buscarTodasReservas($id){
+        $reservaService = new ReservaService();
+        return $reservaService->buscarTodasReservas($id);
+    }
+    
     public function inserirReserva(Reserva $reserva){
         $reservaService = new ReservaService();
         if($reservaService->inserirReserva($reserva)){

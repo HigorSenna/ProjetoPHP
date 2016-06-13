@@ -4,9 +4,17 @@ if(isset($_GET['id'])){
 }
 
 require_once ('../Controller/ConsultaPecaTeatroController.php');
+require_once ('../Controller/ReservaController.php');
 use ProjetoPHP\Controller\ConsultaPecaTeatroController;
+use ProjetoPHP\Controller\ReservaController;
+
 $consultaPeca = new ConsultaPecaTeatroController();
 $pecaTeatro = $consultaPeca->buscarPecaPorId($id);
+
+$reservaController = new ReservaController();
+$reserva = $reservaController->buscarTodasReservas($id);
+$todasReservas = $reserva->fetch();
+
 ?>
 
 <!doctype html>
@@ -25,17 +33,19 @@ $pecaTeatro = $consultaPeca->buscarPecaPorId($id);
         <h2>Qtd Lugares: <?= $pecaTeatro['QTD'] ?> </h2>
         <img src="<?= $pecaTeatro['CAMINHO_IMAGEM']?>" style='width:300px;height: 400px;'> </img>
 
-        <div style="width:850px;margin:-285px auto;">
+        <!--buscar todas as reservas do banco, se num_cadeira == i = esta reservado-->
+
+        <div style="width:490px;margin:-285px auto;">
             <form action="../Transacoes/reserva.php" method="POST">
                 <input type="hidden" name="idPeca" value="<?=$id?>"/>
                 <?php
                     $lugares = $pecaTeatro['QTD'];
                     for($i = 1; $i < $lugares;$i++){
-                        if($i/11 == 1){
-                            echo "<br> Lugar $i: <input type='radio' name='lugar' value='$i' /> ";
+                        if($todasReservas['NUM_CADEIRA'] == $i){
+                            echo " <input type='radio' name='lugar' value='$i' disabled='disabled'/> <span style='color:red;'> X: </span>";
                         }
                         else{
-                            echo "Lugar $i: <input type='radio' name='lugar' value='$i' /> ";
+                            echo "<input type='radio' name='lugar' value='$i' /> P $i";
                         }
                     }
                 ?>

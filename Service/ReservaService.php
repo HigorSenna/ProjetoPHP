@@ -7,6 +7,11 @@ use ProjetoPHP\Classes\Reserva;
 
 class ReservaService
 {
+    public function buscarTodasReservas($id){
+        $reservaDAO = new ReservaDAO();
+        return $reservaDAO->buscarTodasReservasDaPeca($id);
+    }
+    
     public function inserirReserva(Reserva $reserva){
         $reservaDAO = new ReservaDAO();
         if($reservaDAO->inserirReserva($reserva)){
