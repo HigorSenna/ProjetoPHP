@@ -18,32 +18,6 @@ USE `teatro`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `administradores`
---
-
-DROP TABLE IF EXISTS `administradores`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `administradores` (
-  `id_adm` int(11) NOT NULL AUTO_INCREMENT,
-  `login` varchar(45) NOT NULL,
-  `senha` varchar(45) NOT NULL,
-  `nome` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_adm`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `administradores`
---
-
-LOCK TABLES `administradores` WRITE;
-/*!40000 ALTER TABLE `administradores` DISABLE KEYS */;
-INSERT INTO `administradores` VALUES (1,'a','a','senna');
-/*!40000 ALTER TABLE `administradores` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `lugares_peca`
 --
 
@@ -57,7 +31,7 @@ CREATE TABLE `lugares_peca` (
   PRIMARY KEY (`ID_LUGAR`),
   KEY `fk_lugar_peca_idx` (`ID_PECA`),
   CONSTRAINT `fk_lugar_peca` FOREIGN KEY (`ID_PECA`) REFERENCES `pecas` (`ID_PECA`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +40,7 @@ CREATE TABLE `lugares_peca` (
 
 LOCK TABLES `lugares_peca` WRITE;
 /*!40000 ALTER TABLE `lugares_peca` DISABLE KEYS */;
-INSERT INTO `lugares_peca` VALUES (25,49,100),(26,50,100),(27,51,100);
+INSERT INTO `lugares_peca` VALUES (28,52,100),(29,53,100),(30,54,100);
 /*!40000 ALTER TABLE `lugares_peca` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +59,7 @@ CREATE TABLE `pecas` (
   `DESC_PECA` varchar(45) NOT NULL,
   `CAMINHO_IMAGEM` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`ID_PECA`)
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,7 +68,7 @@ CREATE TABLE `pecas` (
 
 LOCK TABLES `pecas` WRITE;
 /*!40000 ALTER TABLE `pecas` DISABLE KEYS */;
-INSERT INTO `pecas` VALUES (49,'As Filhas da Mãe','14/07','14:00','Peça de Teatro','../uploads/filhas-da-mae.jpg'),(50,'Corpo Santo','14/07','17:00','Peça de Teatro','../uploads/corpo_santo.jpg'),(51,'Saga Italiana','14/07','22:00','Peça de Teatro','../uploads/santo_imigrante.jpg');
+INSERT INTO `pecas` VALUES (52,'As Filhas da Mãe','14/07','22:30','Peça de Teatro','../uploads/filhas-da-mae.jpg'),(53,'Corpo Santo','18/09','14:00','Peça de Teatro','../uploads/corpo_santo.jpg'),(54,'Saga Italiana','30/05','10:30','Peça de Teatro','../uploads/santo_imigrante.jpg');
 /*!40000 ALTER TABLE `pecas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -115,7 +89,7 @@ CREATE TABLE `reservas` (
   KEY `fk_reserva_usuario_idx` (`ID_USUARIO`),
   CONSTRAINT `fk_reserva_peca` FOREIGN KEY (`ID_PECA`) REFERENCES `pecas` (`ID_PECA`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_reserva_usuario` FOREIGN KEY (`ID_USUARIO`) REFERENCES `usuarios` (`ID_USUARIO`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -143,7 +117,7 @@ CREATE TABLE `usuarios` (
   `SENHA` varchar(45) NOT NULL,
   `TIPO_USUARIO` enum('adm','comum') DEFAULT NULL,
   PRIMARY KEY (`ID_USUARIO`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -152,7 +126,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'5','151','178','818','81',NULL),(2,'56','181','818','18','81','comum'),(3,'sdhbsd','sdffasd','23','qwdqw','qeq',NULL),(4,'Testando','sduh','sduh','uhsu','h',NULL),(5,'weuweruweruiwerui','51','51','18','181',NULL),(6,'TESTE','sdsd','23','qw','dqw',NULL),(7,'ahahah','sdsd','5128','sdsd','ssdsd',NULL),(8,'saasd','asd','55','sdsd','jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj',NULL),(9,'asdyhasdd','dasdasd77','415','23234909','232342',NULL),(10,'SENNA','sas','5','3','5','adm'),(11,'Higor Senna Chaves','ahahah@gmail.com','a','(55) 8978-9863','a','comum'),(12,'b','b','b','b','b',NULL),(13,'c','c','c','c','c',NULL),(14,'d','d','d','d','d','comum');
+INSERT INTO `usuarios` VALUES (15,'a','a','a','a','a','adm'),(16,'Higor Senna','higorrebjfmg@gmail.com','158','(55) 8978-9863','158','comum');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -165,4 +139,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-13 17:36:57
+-- Dump completed on 2016-06-13 20:32:33
