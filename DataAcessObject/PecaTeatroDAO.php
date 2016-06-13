@@ -11,16 +11,16 @@ class PecaTeatroDAO
     // -> excluir reservas onde ID_PECA = ID_PECA,
     //-> excluir lugares_peca onde ID_PECA=ID_PECA e
     //-> excluir peca
-    public function excluir($id){
-       // $db = ConexaoBanco::realizarConexao();
-        /*$sql  ="DELETE FROM pecas WHERE (ID_PECA) = (?)";
-      
-        $valor = array($id);
-        $stmt = $db->prepare($sql);
-        if($stmt ->execute($valor)){
+
+    public function excluirPecaSemReserva($id){
+        if($this->excluirLugaresDisponiveisPeca($id)->rowCount()> 0
+            && $this->excluirPecaBanco($id)->rowCount() > 0){
             return true;
         }
-        return false;*/
+        return false;
+    }
+
+    public function excluir($id){
         
         if($this->excluirReservasReferenteAPeca($id)->rowCount()> 0
             && $this->excluirLugaresDisponiveisPeca($id)->rowCount()> 0 

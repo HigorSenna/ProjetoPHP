@@ -27,7 +27,7 @@ else{
     echo "Essa peça ainda nao possui reservas.
     <h1>Deseja realmente excluir a peça?</h1>
     
-    <a href='excluirPecaBanco.php?id=$id'>SIM</a>
+    <a href='excluirPecaBanco.php?id=$id';reserva='false'>SIM</a>
     <a href='../pages/admVizualizarPecas.php'>NÃO</a>";
 }
 

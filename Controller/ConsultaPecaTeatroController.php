@@ -25,5 +25,13 @@ class ConsultaPecaTeatroController
     public function buscarAscentoPeca($id){
         
     }
+    
+    public function excluirPecaSemReserva($id){
+        $pecaTeatroService = new PecaTeatroService();
+        if($pecaTeatroService->excluirPecaSemReserva($id)){
+            return true;
+        }
+        return false;
+    }
 
 }

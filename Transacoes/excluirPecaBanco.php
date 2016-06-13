@@ -6,7 +6,7 @@ $id = $_GET['id'];
 
 $consultaPeca = new ConsultaPecaTeatroController();
 
-if($consultaPeca->excluir($id)){
+if($consultaPeca->excluir($id) || $consultaPeca->excluirPecaSemReserva($id)){
     echo"
         <script>
             alert('Peca excluida com sucesso!');

@@ -8,6 +8,13 @@ use ProjetoPHP\Classes\PecaTeatro;
 
 class PecaTeatroService
 {
+    public function excluirPecaSemReserva($id){
+        $pecaTeatroDAO = new PecaTeatroDAO();
+        if($pecaTeatroDAO->excluirPecaSemReserva($id)){
+            return true;
+        }
+        return false;
+    }
 
     public function excluirPeca($id){
         //bucar peca por id, pegar o caminho da imagem
