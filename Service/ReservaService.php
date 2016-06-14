@@ -7,6 +7,14 @@ use ProjetoPHP\Classes\Reserva;
 
 class ReservaService
 {
+    public function excluirReservaUsuario(Reserva $reserva){
+        $reservaDAO = new ReservaDAO();
+        if($reservaDAO->excluirReservaUsuario($reserva)){
+            return true;
+        }
+        return false;
+    }
+    
     public function buscarTodasReservas($id){
         $reservaDAO = new ReservaDAO();
         return $reservaDAO->buscarTodasReservasDaPeca($id);

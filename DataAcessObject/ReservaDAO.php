@@ -8,6 +8,19 @@ use ProjetoPHP\ConexaoBanco\ConexaoBanco;
 
 class ReservaDAO
 {
+    public function excluirReservaUsuario(Reserva $reserva){
+        $db = ConexaoBanco::realizarConexao();
+        $sql = "DELETE FROM reservas WHERE ID_USUARIO = (?) AND ID_PECA = (?)";
+        
+        $stmt = $db->prepare($sql);
+        $params = array($reserva->getIdUsuario(),$reserva->getIdPeca());
+        
+        if($stmt->execute($params)){
+            return true;
+        }
+        return false;        
+    }
+    
     public function buscarTodasReservasDaPeca($id){
         $db = ConexaoBanco::realizarConexao();
         $sql = "SELECT NUM_CADEIRA FROM reservas WHERE ID_PECA = $id";

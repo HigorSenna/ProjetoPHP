@@ -1,12 +1,16 @@
 <?php
+session_start();
 if(isset($_GET['id'])){
     $id = $_GET['id'];
 }
 
 require_once ('../Controller/ConsultaPecaTeatroController.php');
 require_once ('../Controller/ReservaController.php');
+include_once ('../Classes/Reserva.php');
+
 use ProjetoPHP\Controller\ConsultaPecaTeatroController;
 use ProjetoPHP\Controller\ReservaController;
+use ProjetoPHP\Classes\Reserva;
 
 $consultaPeca = new ConsultaPecaTeatroController();
 $pecaTeatro = $consultaPeca->buscarPecaPorId($id);
@@ -65,9 +69,26 @@ while($resultado = $reserva->fetch()){
                     }
                 ?>
                 <input type="submit" value="Escolher cadeira"/>
-
             </form>
+            <br />
+
             <a href="home.php">Peças em cartaz</a>
+            <br />
+            <br />
+            <!--Se o usuario estiver se registrado nessa peça exibir o botao para retirar o registro.
+            passar id do usuario e id da peca-->
+            <?php
+                $idUsuario = $_SESSION['user']['ID_USUARIO'];
+            $reservaPecaController = new ReservaController();
+            $reservaUusario = new Reserva();
+            $reservaUusario->setIdPeca($id);
+            $reservaUusario->setIdUsuario($idUsuario);
+            $resultado = $reservaPecaController->buscarReservaUsuario($reservaUusario);
+            if($resultado->rowCount()>0){
+                echo"<a href='../Transacoes/retirarReserva.php?idUsuario=$idUsuario&&idPeca=$id'>Retirar Reserva</a>";
+            }
+            ?>
+           
         </div>
     </div>
 

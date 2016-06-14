@@ -9,6 +9,14 @@ use ProjetoPHP\Service\ReservaService;
 
 class ReservaController
 {
+    public function excluirReservaUsuario(Reserva $reserva){
+        $reservaService = new ReservaService();
+        if($reservaService->excluirReservaUsuario($reserva)){
+            return true;
+        }
+        return false;
+    }
+    
     public function buscarTodasReservas($id){
         $reservaService = new ReservaService();
         return $reservaService->buscarTodasReservas($id);
