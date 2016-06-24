@@ -45,9 +45,7 @@ while($resultado = $reserva->fetch()){
 
         <!--buscar todas as reservas do banco, se num_cadeira == i = esta reservado-->
 
-        <div style="width:490px;margin:-285px auto;">
-            <form action="../Transacoes/reserva.php" method="POST">
-                <input type="hidden" name="idPeca" value="<?=$id?>"/>
+        <div style="width:490px;margin:-285px auto;">        
 
                 <?php
                     $lugares = $pecaTeatro['QTD'];
@@ -60,16 +58,15 @@ while($resultado = $reserva->fetch()){
                         }
                         if($estaReservada == true){
                             $estaReservada= false;
-                            echo " <input type='radio' name='lugar' value='$i' disabled='disabled'/> <span style='color:red;'> X </span>";
+                           // echo " <input type='radio' name='lugar' value='$i' disabled='disabled'/> <span style='color:red;'> X </span>";
+                            echo "<img src='/ProjetoPHP/estilos/img/reservada.png' style='width:30px;'>";
                         }
                         else{
-
-                            echo "<input type='radio' name='lugar' value='$i' /> P $i";
+                            echo "<a href='../Transacoes/reserva.php?lugar=$i&idPeca=$id'> $i <img src='/ProjetoPHP/estilos/img/disponivel.png' style='width:30px;'> </a>";
                         }
                     }
                 ?>
-                <input type="submit" value="Escolher cadeira"/>
-            </form>
+
             <br />
 
             <a href="home.php">Peças em cartaz</a>

@@ -9,8 +9,8 @@ use ProjetoPHP\Controller\ReservaController;
 $reserva = new Reserva();
 
 $reserva->setIdUsuario($_SESSION['user']['ID_USUARIO']);
-$reserva->setNumeroLugarSelecionado($_POST['lugar']);
-$reserva->setIdPeca($_POST['idPeca']);
+$reserva->setNumeroLugarSelecionado($_GET['lugar']);
+$reserva->setIdPeca($_GET['idPeca']);
 
 $reservaController = new ReservaController();
 
