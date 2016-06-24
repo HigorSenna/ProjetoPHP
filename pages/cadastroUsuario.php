@@ -3,35 +3,45 @@
 <head>
     <script src="/ProjetoPHP/estilos/bootstrap-3.3.6-dist/js/jquery-1.12.4.js"></script>
     <link rel="stylesheet" href="/ProjetoPHP/estilos/bootstrap-3.3.6-dist/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/cadastroUsuario.css">
     <script src="/ProjetoPHP/estilos/bootstrap-3.3.6-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="UTF-8">
     <title>Cadastro de Usuários</title>
 </head>
 <body>
-    <div class="container-fluid">
+<div class="container-fluid">
+    <div class="well">
         <div class="form-group">
             <form action="/ProjetoPHP/Transacoes/inserirUsuario.php" method="POST">
-                <label>Nome:</label>
+                <div class="well">
+                    <div><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm" id="efetuar"><strong> Efetuar Login no Sistema</strong> <span class="glyphicon glyphicon-check"></span></button> </div>
+                </div>
+
+                <label><span class="glyphicon glyphicon-user"></span> Nome:</label>
                 <input type="text" name="nomeUsuario" class="form-control" required="required"/>
 
-                <label>Email:</label>
+                <label> <span class="glyphicon glyphicon-envelope"></span> Email: </label>
                 <input type="text" name="emailUsuario" class="form-control" required="required"/>
 
-                <label>CPF:</label>
+                <label><span class="glyphicon glyphicon-credit-card"></span> CPF:</label>
                 <input type="text" name="cpfUsuario" class="form-control" required="required"/>
 
-                <label>Endereço:</label>
+                <label><span class="glyphicon glyphicon-home"></span> Endereço:</label>
                 <input type="text" name="enderecoUsuario" class="form-control" required="required"/>
 
-                <label>Telefone:</label>
+                <label> <span class="glyphicon glyphicon-earphone"></span> Telefone:</label>
                 <input type="text" name="telefoneUsuario" class="form-control" required="required"/>
 
-                <label>Senha:</label>
-                <input type="text" name="senhaUsuario" class="form-control" required="required"/>
+                <label><span class="glyphicon glyphicon-lock"></span> Senha:</label>
+                <input type="text" name="senhaUsuario" class="form-control" required="required"/><br>
 
-                <input type="submit" class="btn-success" value="Cadastrar"/>
+
+                <button type="submit" class="btn btn-success btn-block" value="Cadastrar"><strong>CADASTRAR  <span class="glyphicon glyphicon-ok"></span></strong></button>
             </form>
         </div>
+    </div>
 
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Login no sistema</button>
 
